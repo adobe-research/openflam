@@ -23,7 +23,7 @@ FLAM is based on contrastive language-audio pretraining, known as CLAP, and impr
 
 ## Quick Start 
 
-Install FLAM from PyPi:
+Install FLAM via PyPi:
 
 ```bash
 pip install openflam
@@ -31,7 +31,7 @@ pip install openflam
 
 Two examples are provided:
 
-1. [embedding_inference.py](./test/embedding_inference.py): to obtain audio and text embeddings, do sound event localization, and plot the results.
+1. [embedding_inference.py](./test/embedding_inference.py): to obtain audio and text embeddings and do sound event localization.
 2. [sed_inference_and_plot.py](./test/sed_inference_and_plot.py) to do sound event localization and plot the results.
 
 For the API documentation, please refer to [hook.py](./src/openflam/hook.py).
