@@ -3,13 +3,17 @@ requires = ["setuptools >= 77.0.3"]
 build-backend = "setuptools.build_meta"
 [project]
 name = "openflam"
-version = "0.0.1"
+version = "0.9.0"
 authors = [
   { name="Ke Chen", email="kechen@adobe.com" },
+  { name="Oriol Nieto", email="onieto@adobe.com" },
+  { name="Prem Seetharaman", email="seethara@adobe.com" },
   { name="Yusong Wu" }
 ]
 maintainers = [
   { name="Ke Chen", email="kechen@adobe.com" },
+  { name="Oriol Nieto", email="onieto@adobe.com" },
+  { name="Prem Seetharaman", email="seethara@adobe.com" },
   { name="Yusong Wu" }
 ]
 description = "Framewise Lanaguge-Audio Modeling"
@@ -37,5 +41,5 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/kechen_adobe/OpenFLAM"
-"Bug Tracker" = "https://github.com/kechen_adobe/OpenFLAM/issues"
+"Homepage" = "https://github.com/adobe-research/openflam"
+"Bug Tracker" = "https://github.com/adobe-research/openflam/issues"

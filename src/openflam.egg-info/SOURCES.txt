@@ -1,8 +1,6 @@
 LICENSE
 README.md
 pyproject.toml
-src/eval/eval_aed_audioset_urban_sed_psds.py
-src/eval/eval_piecewise_retrieval.py
 src/openflam/__init__.py
 src/openflam/hook.py
 src/openflam.egg-info/PKG-INFO

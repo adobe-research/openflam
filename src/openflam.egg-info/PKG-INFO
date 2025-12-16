@@ -1,442 +1,28 @@
 Metadata-Version: 2.4
 Name: openflam
-Version: 0.0.1
+Version: 0.9.0
 Summary: Framewise Lanaguge-Audio Modeling
 Author: Yusong Wu
-Author-email: Ke Chen <kechen@adobe.com>
+Author-email: Ke Chen <kechen@adobe.com>, Oriol Nieto <onieto@adobe.com>, Prem Seetharaman <seethara@adobe.com>
 Maintainer: Yusong Wu
-Maintainer-email: Ke Chen <kechen@adobe.com>
-License: Attribution-ShareAlike 4.0 International
-        
-        =======================================================================
-        
-        Creative Commons Corporation ("Creative Commons") is not a law firm and
-        does not provide legal services or legal advice. Distribution of
-        Creative Commons public licenses does not create a lawyer-client or
-        other relationship. Creative Commons makes its licenses and related
-        information available on an "as-is" basis. Creative Commons gives no
-        warranties regarding its licenses, any material licensed under their
-        terms and conditions, or any related information. Creative Commons
-        disclaims all liability for damages resulting from their use to the
-        fullest extent possible.
-        
-        Using Creative Commons Public Licenses
-        
-        Creative Commons public licenses provide a standard set of terms and
-        conditions that creators and other rights holders may use to share
-        original works of authorship and other material subject to copyright
-        and certain other rights specified in the public license below. The
-        following considerations are for informational purposes only, are not
-        exhaustive, and do not form part of our licenses.
-        
-             Considerations for licensors: Our public licenses are
-             intended for use by those authorized to give the public
-             permission to use material in ways otherwise restricted by
-             copyright and certain other rights. Our licenses are
-             irrevocable. Licensors should read and understand the terms
-             and conditions of the license they choose before applying it.
-             Licensors should also secure all rights necessary before
-             applying our licenses so that the public can reuse the
-             material as expected. Licensors should clearly mark any
-             material not subject to the license. This includes other CC-
-             licensed material, or material used under an exception or
-             limitation to copyright. More considerations for licensors:
-        	wiki.creativecommons.org/Considerations_for_licensors
-        
-             Considerations for the public: By using one of our public
-             licenses, a licensor grants the public permission to use the
-             licensed material under specified terms and conditions. If
-             the licensor's permission is not necessary for any reason--for
-             example, because of any applicable exception or limitation to
-             copyright--then that use is not regulated by the license. Our
-             licenses grant only permissions under copyright and certain
-             other rights that a licensor has authority to grant. Use of
-             the licensed material may still be restricted for other
-             reasons, including because others have copyright or other
-             rights in the material. A licensor may make special requests,
-             such as asking that all changes be marked or described.
-             Although not required by our licenses, you are encouraged to
-             respect those requests where reasonable. More_considerations
-             for the public:
-        	wiki.creativecommons.org/Considerations_for_licensees
-        
-        =======================================================================
-        
-        Creative Commons Attribution-ShareAlike 4.0 International Public
-        License
-        
-        By exercising the Licensed Rights (defined below), You accept and agree
-        to be bound by the terms and conditions of this Creative Commons
-        Attribution-ShareAlike 4.0 International Public License ("Public
-        License"). To the extent this Public License may be interpreted as a
-        contract, You are granted the Licensed Rights in consideration of Your
-        acceptance of these terms and conditions, and the Licensor grants You
-        such rights in consideration of benefits the Licensor receives from
-        making the Licensed Material available under these terms and
-        conditions.
-        
-        
-        Section 1 -- Definitions.
-        
-          a. Adapted Material means material subject to Copyright and Similar
-             Rights that is derived from or based upon the Licensed Material
-             and in which the Licensed Material is translated, altered,
-             arranged, transformed, or otherwise modified in a manner requiring
-             permission under the Copyright and Similar Rights held by the
-             Licensor. For purposes of this Public License, where the Licensed
-             Material is a musical work, performance, or sound recording,
-             Adapted Material is always produced where the Licensed Material is
-             synched in timed relation with a moving image.
-        
-          b. Adapter's License means the license You apply to Your Copyright
-             and Similar Rights in Your contributions to Adapted Material in
-             accordance with the terms and conditions of this Public License.
-        
-          c. BY-SA Compatible License means a license listed at
-             creativecommons.org/compatiblelicenses, approved by Creative
-             Commons as essentially the equivalent of this Public License.
-        
-          d. Copyright and Similar Rights means copyright and/or similar rights
-             closely related to copyright including, without limitation,
-             performance, broadcast, sound recording, and Sui Generis Database
-             Rights, without regard to how the rights are labeled or
-             categorized. For purposes of this Public License, the rights
-             specified in Section 2(b)(1)-(2) are not Copyright and Similar
-             Rights.
-        
-          e. Effective Technological Measures means those measures that, in the
-             absence of proper authority, may not be circumvented under laws
-             fulfilling obligations under Article 11 of the WIPO Copyright
-             Treaty adopted on December 20, 1996, and/or similar international
-             agreements.
-        
-          f. Exceptions and Limitations means fair use, fair dealing, and/or
-             any other exception or limitation to Copyright and Similar Rights
-             that applies to Your use of the Licensed Material.
-        
-          g. License Elements means the license attributes listed in the name
-             of a Creative Commons Public License. The License Elements of this
-             Public License are Attribution and ShareAlike.
-        
-          h. Licensed Material means the artistic or literary work, database,
-             or other material to which the Licensor applied this Public
-             License.
-        
-          i. Licensed Rights means the rights granted to You subject to the
-             terms and conditions of this Public License, which are limited to
-             all Copyright and Similar Rights that apply to Your use of the
-             Licensed Material and that the Licensor has authority to license.
-        
-          j. Licensor means the individual(s) or entity(ies) granting rights
-             under this Public License.
-        
-          k. Share means to provide material to the public by any means or
-             process that requires permission under the Licensed Rights, such
-             as reproduction, public display, public performance, distribution,
-             dissemination, communication, or importation, and to make material
-             available to the public including in ways that members of the
-             public may access the material from a place and at a time
-             individually chosen by them.
-        
-          l. Sui Generis Database Rights means rights other than copyright
-             resulting from Directive 96/9/EC of the European Parliament and of
-             the Council of 11 March 1996 on the legal protection of databases,
-             as amended and/or succeeded, as well as other essentially
-             equivalent rights anywhere in the world.
-        
-          m. You means the individual or entity exercising the Licensed Rights
-             under this Public License. Your has a corresponding meaning.
-        
-        
-        Section 2 -- Scope.
-        
-          a. License grant.
-        
-               1. Subject to the terms and conditions of this Public License,
-                  the Licensor hereby grants You a worldwide, royalty-free,
-                  non-sublicensable, non-exclusive, irrevocable license to
-                  exercise the Licensed Rights in the Licensed Material to:
-        
-                    a. reproduce and Share the Licensed Material, in whole or
-                       in part; and
-        
-                    b. produce, reproduce, and Share Adapted Material.
-        
-               2. Exceptions and Limitations. For the avoidance of doubt, where
-                  Exceptions and Limitations apply to Your use, this Public
-                  License does not apply, and You do not need to comply with
-                  its terms and conditions.
-        
-               3. Term. The term of this Public License is specified in Section
-                  6(a).
-        
-               4. Media and formats; technical modifications allowed. The
-                  Licensor authorizes You to exercise the Licensed Rights in
-                  all media and formats whether now known or hereafter created,
-                  and to make technical modifications necessary to do so. The
-                  Licensor waives and/or agrees not to assert any right or
-                  authority to forbid You from making technical modifications
-                  necessary to exercise the Licensed Rights, including
-                  technical modifications necessary to circumvent Effective
-                  Technological Measures. For purposes of this Public License,
-                  simply making modifications authorized by this Section 2(a)
-                  (4) never produces Adapted Material.
-        
-               5. Downstream recipients.
-        
-                    a. Offer from the Licensor -- Licensed Material. Every
-                       recipient of the Licensed Material automatically
-                       receives an offer from the Licensor to exercise the
-                       Licensed Rights under the terms and conditions of this
-                       Public License.
-        
-                    b. Additional offer from the Licensor -- Adapted Material.
-                       Every recipient of Adapted Material from You
-                       automatically receives an offer from the Licensor to
-                       exercise the Licensed Rights in the Adapted Material
-                       under the conditions of the Adapter's License You apply.
-        
-                    c. No downstream restrictions. You may not offer or impose
-                       any additional or different terms or conditions on, or
-                       apply any Effective Technological Measures to, the
-                       Licensed Material if doing so restricts exercise of the
-                       Licensed Rights by any recipient of the Licensed
-                       Material.
-        
-               6. No endorsement. Nothing in this Public License constitutes or
-                  may be construed as permission to assert or imply that You
-                  are, or that Your use of the Licensed Material is, connected
-                  with, or sponsored, endorsed, or granted official status by,
-                  the Licensor or others designated to receive attribution as
-                  provided in Section 3(a)(1)(A)(i).
-        
-          b. Other rights.
-        
-               1. Moral rights, such as the right of integrity, are not
-                  licensed under this Public License, nor are publicity,
-                  privacy, and/or other similar personality rights; however, to
-                  the extent possible, the Licensor waives and/or agrees not to
-                  assert any such rights held by the Licensor to the limited
-                  extent necessary to allow You to exercise the Licensed
-                  Rights, but not otherwise.
-        
-               2. Patent and trademark rights are not licensed under this
-                  Public License.
-        
-               3. To the extent possible, the Licensor waives any right to
-                  collect royalties from You for the exercise of the Licensed
-                  Rights, whether directly or through a collecting society
-                  under any voluntary or waivable statutory or compulsory
-                  licensing scheme. In all other cases the Licensor expressly
-                  reserves any right to collect such royalties.
-        
-        
-        Section 3 -- License Conditions.
-        
-        Your exercise of the Licensed Rights is expressly made subject to the
-        following conditions.
-        
-          a. Attribution.
-        
-               1. If You Share the Licensed Material (including in modified
-                  form), You must:
-        
-                    a. retain the following if it is supplied by the Licensor
-                       with the Licensed Material:
-        
-                         i. identification of the creator(s) of the Licensed
-                            Material and any others designated to receive
-                            attribution, in any reasonable manner requested by
-                            the Licensor (including by pseudonym if
-                            designated);
-        
-                        ii. a copyright notice;
-        
-                       iii. a notice that refers to this Public License;
-        
-                        iv. a notice that refers to the disclaimer of
-                            warranties;
-        
-                         v. a URI or hyperlink to the Licensed Material to the
-                            extent reasonably practicable;
-        
-                    b. indicate if You modified the Licensed Material and
-                       retain an indication of any previous modifications; and
-        
-                    c. indicate the Licensed Material is licensed under this
-                       Public License, and include the text of, or the URI or
-                       hyperlink to, this Public License.
-        
-               2. You may satisfy the conditions in Section 3(a)(1) in any
-                  reasonable manner based on the medium, means, and context in
-                  which You Share the Licensed Material. For example, it may be
-                  reasonable to satisfy the conditions by providing a URI or
-                  hyperlink to a resource that includes the required
-                  information.
-        
-               3. If requested by the Licensor, You must remove any of the
-                  information required by Section 3(a)(1)(A) to the extent
-                  reasonably practicable.
-        
-          b. ShareAlike.
-        
-             In addition to the conditions in Section 3(a), if You Share
-             Adapted Material You produce, the following conditions also apply.
-        
-               1. The Adapter's License You apply must be a Creative Commons
-                  license with the same License Elements, this version or
-                  later, or a BY-SA Compatible License.
-        
-               2. You must include the text of, or the URI or hyperlink to, the
-                  Adapter's License You apply. You may satisfy this condition
-                  in any reasonable manner based on the medium, means, and
-                  context in which You Share Adapted Material.
-        
-               3. You may not offer or impose any additional or different terms
-                  or conditions on, or apply any Effective Technological
-                  Measures to, Adapted Material that restrict exercise of the
-                  rights granted under the Adapter's License You apply.
-        
-        
-        Section 4 -- Sui Generis Database Rights.
-        
-        Where the Licensed Rights include Sui Generis Database Rights that
-        apply to Your use of the Licensed Material:
-        
-          a. for the avoidance of doubt, Section 2(a)(1) grants You the right
-             to extract, reuse, reproduce, and Share all or a substantial
-             portion of the contents of the database;
-        
-          b. if You include all or a substantial portion of the database
-             contents in a database in which You have Sui Generis Database
-             Rights, then the database in which You have Sui Generis Database
-             Rights (but not its individual contents) is Adapted Material,
-        
-             including for purposes of Section 3(b); and
-          c. You must comply with the conditions in Section 3(a) if You Share
-             all or a substantial portion of the contents of the database.
-        
-        For the avoidance of doubt, this Section 4 supplements and does not
-        replace Your obligations under this Public License where the Licensed
-        Rights include other Copyright and Similar Rights.
-        
-        
-        Section 5 -- Disclaimer of Warranties and Limitation of Liability.
-        
-          a. UNLESS OTHERWISE SEPARATELY UNDERTAKEN BY THE LICENSOR, TO THE
-             EXTENT POSSIBLE, THE LICENSOR OFFERS THE LICENSED MATERIAL AS-IS
-             AND AS-AVAILABLE, AND MAKES NO REPRESENTATIONS OR WARRANTIES OF
-             ANY KIND CONCERNING THE LICENSED MATERIAL, WHETHER EXPRESS,
-             IMPLIED, STATUTORY, OR OTHER. THIS INCLUDES, WITHOUT LIMITATION,
-             WARRANTIES OF TITLE, MERCHANTABILITY, FITNESS FOR A PARTICULAR
-             PURPOSE, NON-INFRINGEMENT, ABSENCE OF LATENT OR OTHER DEFECTS,
-             ACCURACY, OR THE PRESENCE OR ABSENCE OF ERRORS, WHETHER OR NOT
-             KNOWN OR DISCOVERABLE. WHERE DISCLAIMERS OF WARRANTIES ARE NOT
-             ALLOWED IN FULL OR IN PART, THIS DISCLAIMER MAY NOT APPLY TO YOU.
-        
-          b. TO THE EXTENT POSSIBLE, IN NO EVENT WILL THE LICENSOR BE LIABLE
-             TO YOU ON ANY LEGAL THEORY (INCLUDING, WITHOUT LIMITATION,
-             NEGLIGENCE) OR OTHERWISE FOR ANY DIRECT, SPECIAL, INDIRECT,
-             INCIDENTAL, CONSEQUENTIAL, PUNITIVE, EXEMPLARY, OR OTHER LOSSES,
-             COSTS, EXPENSES, OR DAMAGES ARISING OUT OF THIS PUBLIC LICENSE OR
-             USE OF THE LICENSED MATERIAL, EVEN IF THE LICENSOR HAS BEEN
-             ADVISED OF THE POSSIBILITY OF SUCH LOSSES, COSTS, EXPENSES, OR
-             DAMAGES. WHERE A LIMITATION OF LIABILITY IS NOT ALLOWED IN FULL OR
-             IN PART, THIS LIMITATION MAY NOT APPLY TO YOU.
-        
-          c. The disclaimer of warranties and limitation of liability provided
-             above shall be interpreted in a manner that, to the extent
-             possible, most closely approximates an absolute disclaimer and
-             waiver of all liability.
-        
-        
-        Section 6 -- Term and Termination.
-        
-          a. This Public License applies for the term of the Copyright and
-             Similar Rights licensed here. However, if You fail to comply with
-             this Public License, then Your rights under this Public License
-             terminate automatically.
-        
-          b. Where Your right to use the Licensed Material has terminated under
-             Section 6(a), it reinstates:
-        
-               1. automatically as of the date the violation is cured, provided
-                  it is cured within 30 days of Your discovery of the
-                  violation; or
-        
-               2. upon express reinstatement by the Licensor.
-        
-             For the avoidance of doubt, this Section 6(b) does not affect any
-             right the Licensor may have to seek remedies for Your violations
-             of this Public License.
-        
-          c. For the avoidance of doubt, the Licensor may also offer the
-             Licensed Material under separate terms or conditions or stop
-             distributing the Licensed Material at any time; however, doing so
-             will not terminate this Public License.
-        
-          d. Sections 1, 5, 6, 7, and 8 survive termination of this Public
-             License.
-        
-        
-        Section 7 -- Other Terms and Conditions.
-        
-          a. The Licensor shall not be bound by any additional or different
-             terms or conditions communicated by You unless expressly agreed.
-        
-          b. Any arrangements, understandings, or agreements regarding the
-             Licensed Material not stated herein are separate from and
-             independent of the terms and conditions of this Public License.
-        
-        
-        Section 8 -- Interpretation.
-        
-          a. For the avoidance of doubt, this Public License does not, and
-             shall not be interpreted to, reduce, limit, restrict, or impose
-             conditions on any use of the Licensed Material that could lawfully
-             be made without permission under this Public License.
-        
-          b. To the extent possible, if any provision of this Public License is
-             deemed unenforceable, it shall be automatically reformed to the
-             minimum extent necessary to make it enforceable. If the provision
-             cannot be reformed, it shall be severed from this Public License
-             without affecting the enforceability of the remaining terms and
-             conditions.
-        
-          c. No term or condition of this Public License will be waived and no
-             failure to comply consented to unless expressly agreed to by the
-             Licensor.
-        
-          d. Nothing in this Public License constitutes or may be interpreted
-             as a limitation upon, or waiver of, any privileges and immunities
-             that apply to the Licensor or You, including from the legal
-             processes of any jurisdiction or authority.
-        
-        
-        =======================================================================
-        
-        Creative Commons is not a party to its public
-        licenses. Notwithstanding, Creative Commons may elect to apply one of
-        its public licenses to material it publishes and in those instances
-        will be considered the “Licensor.” The text of the Creative Commons
-        public licenses is dedicated to the public domain under the CC0 Public
-        Domain Dedication. Except for the limited purpose of indicating that
-        material is shared under a Creative Commons public license or as
-        otherwise permitted by the Creative Commons policies published at
-        creativecommons.org/policies, Creative Commons does not authorize the
-        use of the trademark "Creative Commons" or any other trademark or logo
-        of Creative Commons without its prior written consent including,
-        without limitation, in connection with any unauthorized modifications
-        to any of its public licenses or any other arrangements,
-        understandings, or agreements concerning use of licensed material. For
-        the avoidance of doubt, this paragraph does not form part of the
-        public licenses.
-        
-        Creative Commons may be contacted at creativecommons.org.
-        
-        
-Project-URL: Homepage, https://github.com/kechen_adobe/OpenFLAM
-Project-URL: Bug Tracker, https://github.com/kechen_adobe/OpenFLAM/issues
+Maintainer-email: Ke Chen <kechen@adobe.com>, Oriol Nieto <onieto@adobe.com>, Prem Seetharaman <seethara@adobe.com>
+License: Copyright © 2025, Adobe Inc. and its licensors. All rights reserved.
+        
+        ADOBE RESEARCH LICENSE
+         
+        Adobe grants any person or entity ("you" or "your") obtaining a copy of these certain research materials that are owned by Adobe ("Licensed Materials") a nonexclusive, worldwide, royalty-free, revocable, fully paid license to (A) reproduce, use, modify, and publicly display the Licensed Materials; and (B) redistribute the Licensed Materials, and modifications or derivative works thereof, provided the following conditions are met:
+         
+        -      The rights granted herein may be exercised for noncommercial research purposes (i.e., academic research and teaching) only. Noncommercial research purposes do not include commercial licensing or distribution, development of commercial products, or any other activity that results in commercial gain.
+        -      You may add your own copyright statement to your modifications and/or provide additional or different license terms for use, reproduction, modification, public display, and redistribution of your modifications and derivative works, provided that such license terms limit the use, reproduction, modification, public display, and redistribution of such modifications and derivative works to noncommercial research purposes only.
+        -      You acknowledge that Adobe and its licensors own all right, title, and interest in the Licensed Materials. 
+        -      All copies of the Licensed Materials must include the above copyright notice, this list of conditions, and the disclaimer below.
+         
+        Failure to meet any of the above conditions will automatically terminate the rights granted herein. 
+         
+        THE LICENSED MATERIALS ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. THE ENTIRE RISK AS TO THE USE, RESULTS, AND PERFORMANCE OF THE LICENSED MATERIALS IS ASSUMED BY YOU. ADOBE DISCLAIMS ALL WARRANTIES, EXPRESS, IMPLIED OR STATUTORY, WITH REGARD TO YOUR USE OF THE LICENSED MATERIALS, INCLUDING, BUT NOT LIMITED TO, NONINFRINGEMENT OF THIRD-PARTY RIGHTS. IN NO EVENT WILL ADOBE BE LIABLE FOR ANY ACTUAL, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS OR OTHER COMMERCIAL LOSS, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THE LICENSED MATERIALS, EVEN IF ADOBE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+        
+Project-URL: Homepage, https://github.com/adobe-research/openflam
+Project-URL: Bug Tracker, https://github.com/adobe-research/openflam/issues
 Classifier: Development Status :: 3 - Alpha
 Classifier: Intended Audience :: Developers
 Classifier: Intended Audience :: Science/Research
@@ -457,274 +43,213 @@ Requires-Dist: transformers==4.56.1
 Requires-Dist: matplotlib
 Dynamic: license-file
 
-# FLAM
+# OpenFLAM
 <p align="center">
-  <img src="https://raw.githubusercontent.com/LAION-AI/CLAP/main/assets/logo.PNG" alt="Framewise Language-Audio Modeling" width="60%"/>
+  <img src="./assets/FLAM_SLOGAN.png" alt="Framewise Language-Audio Modeling" width="75%"/>
 </p>
 <p align="center">
   <a href="https://arxiv.org/abs/2505.05335"><img src="https://img.shields.io/badge/arXiv-2505.05335-brightgreen.svg?style=flat-square"/></a>
-  <a href="https://pypi.org/project/laion-clap"><img src="https://badge.fury.io/py/laion-clap.svg"/></a>
-  <a href="https://huggingface.co/docs/transformers/v4.27.2/en/model_doc/clap"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Transformers-blue"/></a>
+  <a href="https://pypi.org/project/openflam"><img src="https://badge.fury.io/py/openflam.svg"/></a>
 </p>
  
-### This repository provides representations of audios and texts via Framewise Language-Audio Modeling (FLAM)
+### Joint Audio and Text Embeddings via Framewise Language-Audio Modeling (FLAM)
 
-FLAM is alanguage-audio pretraining model based on CLAP, with advanced designs to present the framewise representations to support sound event detection and localization via text and audio inputs.
+FLAM is a cutting-edge language–audio model that supports both zero-shot sound even detection and large-scale audio retrieval via free-form text.
 
-With FLAM, you can extract either a global latent representation of any given audio and text for your own model, or for different downstream tasks.
-
-All codes are comming officially with the following paper, accepted by IEEE International Conference on Acoustics, Speech and Signal Processing, ICASSP 2023:
+This code accompanies the following ICML 2025 publication:
  - [FLAM: Frame-Wise Language-Audio Modeling](https://arxiv.org/abs/2505.05335)
 
-**New Updates:** 
-
-<b>1. We release new CLAP pretrained checkpoints pretrained on music and speech data collecstions from [our dataset collection repo](https://github.com/LAION-AI/audio-dataset).</b>
-
-<b>2. CLAP model is incorporated and supported by [HuggingFace Transformers](https://huggingface.co/docs/transformers/v4.27.2/en/model_doc/clap). Many thanks to [Younes Belkada](https://huggingface.co/ybelkada) and [Arthur Zucker](https://fr.linkedin.com/in/arthur-zucker-8a0445144) for contributing to the HuggingFace support. </b>
-
-## About this project
-
-This project is a project in [LAION](https://laion.ai/) that aims at learning better audio understanding and getting more audio data. 
-This is an opensource project. We adopt the codebase of [open_clip](https://github.com/mlfoundations/open_clip) for this project. 
-
-many thanks to <a href="https://github.com/cfoster0/CLAP">@cfoster0</a> for allowing us to use his repo name.
-
 ## Architecture
-Contrastive Language-Audio Pretraining, known as CLAP. Referring to the CLIP (Contrastive Language-Image Pretraining) architecture, the CLAP architecture is as follows.  
+
+FLAM is based on contrastive language-audio pretraining, known as CLAP, and improve its capability by supporting the frame-wise event localization via learnable text and audio biases and scales.  
 <p align="center">
-  <img src="https://raw.githubusercontent.com/LAION-AI/CLAP/main/assets/audioclip-arch.png" alt="The Contrastive Language-Audio Pretraining Model Architecture" width="60%"/>
+  <img src="./assets/FLAM_ARCH.png" alt="FLAM Architecture" width="100%"/>
 </p>
 
 ## Quick Start 
-We provide the PyPI library for our CLAP model:
+
+Install FLAM via PyPi:
+
 ```bash
-pip install laion-clap
+pip install openflam
 ```
 
-Then you can follow the below usage or refer to [unit_test.py](https://github.com/LAION-AI/CLAP/blob/laion_clap_pip/src/laion_clap/unit_test.py).
+Two examples are provided:
 
-For the documentation of the API, please refer to [hook.py](https://github.com/LAION-AI/CLAP/blob/main/src/laion_clap/hook.py).
+1. [embedding_inference.py](./test/embedding_inference.py): to obtain audio and text embeddings and do sound event localization.
+2. [sed_inference_and_plot.py](./test/sed_inference_and_plot.py) to do sound event localization and plot the results.
+
+For the API documentation, please refer to [hook.py](./src/openflam/hook.py).
+
+
+### To obtain audio and text embeddings
+
+Please refer to [embedding_inference.py](./test/embedding_inference.py):
 
 ```python
+import os
+import librosa
+import openflam
+import torch
+
+
+DEVICE = "cuda"  # cuda or cpu
+SR = 48000       # Sampling Rate (FLAM requires 48kHz)
+
+flam = openflam.OpenFLAM(
+    model_name="v1-base", default_ckpt_path="/tmp/openflam"
+).to(DEVICE)
+
+# Sanity Check (Optional)
+flam.sanity_check()
+
+# load audio from 22-33 seconds
+audio, sr = librosa.load("test_data/test_example.mp3", sr=SR)
+audio = audio[int(23. * sr): int(33. * sr)]
+audio_samples = torch.tensor(audio).unsqueeze(0).to(DEVICE) # [B, 480000 = 10 sec]
+
+# Define text
+text_samples = [
+    "man speaking",
+    "man talking through a walkie-talkie",
+    "music",
+    "breathing sound",
+    "ratcheting"
+]
+
+# Get Global Audio Features (10sec = 0.1Hz embeddings)
+audio_global_feature = flam.get_global_audio_features(
+    audio_samples
+)  # [B, 512]
+
+# Get Local Audio Features (0.32sec = ~3Hz embeddings)
+audio_local_feature = flam.get_local_audio_features(
+    audio_samples
+)  # [B, 32, 512] 32 is frame size (0.032 sec / frame)
+
+# Get Text Features
+text_feature = flam.get_text_features(text_samples)  # [B, 512]
+
+# Get Local Similarity for Sound Event Detection
+flamgram = flam.get_local_similarity(
+    audio_samples,
+    text_samples,
+    method="unbiased",
+    cross_product=True,
+)
+```
+
+### To perform sound event localization and plot the diagram
+
+Please refer to [sed_inference_and_plot.py](./test/sed_inference_and_plot.py). 
+
+You should be able to see [such plot](./test/sed_output/sed_heatmap_23s-33s.png) by running the below codes:
+
+```python
+import torch
 import numpy as np
 import librosa
-import torch
-import laion_clap
+import scipy
+from pathlib import Path
+import openflam
+from openflam.module.plot_utils import plot_sed_heatmap
 
-# quantization
-def int16_to_float32(x):
-    return (x / 32767.0).astype(np.float32)
+flam_wrapper = openflam.OpenFLAM(
+      model_name="v1-base", default_ckpt_path="/tmp/openflam"
+)
+flam_wrapper.to("cuda")
 
+# Load and prepare audio
+audio, sr = librosa.load("test_data/test_example.mp3", sr=MODEL_SAMPLE_RATE)
+audio = audio[int(22. * sr) : int(33. * sr)]
 
-def float32_to_int16(x):
-    x = np.clip(x, a_min=-1., a_max=1.)
-    return (x * 32767.).astype(np.int16)
+# Convert to tensor and move to device
+audio_tensor = torch.tensor(audio).unsqueeze(0).to("cuda")
 
-model = laion_clap.CLAP_Module(enable_fusion=False)
-model.load_ckpt() # download the default pretrained checkpoint.
+# Run inference
+with torch.no_grad():
+    # Get local similarity using the wrapper's built-in method
+    # This uses the unbiased method (Eq. 9 in the paper)
+    act_map_cross = (
+        flam_wrapper.get_local_similarity(
+            audio_tensor,
+            TEXTS,
+            method="unbiased",
+            cross_product=True,
+        )
+        .cpu()
+        .numpy()
+    )
 
-# Directly get audio embeddings from audio files
-audio_file = [
-    '/home/data/test_clap_short.wav',
-    '/home/data/test_clap_long.wav'
-]
-audio_embed = model.get_audio_embedding_from_filelist(x = audio_file, use_tensor=False)
-print(audio_embed[:,-20:])
-print(audio_embed.shape)
+# Apply median filtering for smoother results
+act_map_filter = []
+for i in range(act_map_cross.shape[0]):
+    act_map_filter.append(
+        scipy.ndimage.median_filter(act_map_cross[i], (1, MEDIAN_FILTER))
+    )
+act_map_filter = np.array(act_map_filter)
 
-# Get audio embeddings from audio data
-audio_data, _ = librosa.load('/home/data/test_clap_short.wav', sr=48000) # sample rate should be 48000
-audio_data = audio_data.reshape(1, -1) # Make it (1,T) or (N,T)
-audio_embed = model.get_audio_embedding_from_data(x = audio_data, use_tensor=False)
-print(audio_embed[:,-20:])
-print(audio_embed.shape)
+# Prepare similarity dictionary for plotting
+similarity = {
+    f"{TEXTS[i]}": act_map_filter[0][i] for i in range(len(TEXTS))
+}
 
-# Directly get audio embeddings from audio files, but return torch tensor
-audio_file = [
-    '/home/data/test_clap_short.wav',
-    '/home/data/test_clap_long.wav'
-]
-audio_embed = model.get_audio_embedding_from_filelist(x = audio_file, use_tensor=True)
-print(audio_embed[:,-20:])
-print(audio_embed.shape)
+# Prepare audio for plotting (resample to 32kHz)
+audio_plot = librosa.resample(
+    audio, orig_sr=MODEL_SAMPLE_RATE, target_sr=TARGET_SAMPLE_RATE
+)
 
-# Get audio embeddings from audio data
-audio_data, _ = librosa.load('/home/data/test_clap_short.wav', sr=48000) # sample rate should be 48000
-audio_data = audio_data.reshape(1, -1) # Make it (1,T) or (N,T)
-audio_data = torch.from_numpy(int16_to_float32(float32_to_int16(audio_data))).float() # quantize before send it in to the model
-audio_embed = model.get_audio_embedding_from_data(x = audio_data, use_tensor=True)
-print(audio_embed[:,-20:])
-print(audio_embed.shape)
-
-# Get text embedings from texts:
-text_data = ["I love the contrastive learning", "I love the pretrain model"] 
-text_embed = model.get_text_embedding(text_data)
-print(text_embed)
-print(text_embed.shape)
-
-# Get text embedings from texts, but return torch tensor:
-text_data = ["I love the contrastive learning", "I love the pretrain model"] 
-text_embed = model.get_text_embedding(text_data, use_tensor=True)
-print(text_embed)
-print(text_embed.shape)
+# Generate and save visualization
+output_path = "sed_output/sed_heatmap_22s-33s.png"
+plot_sed_heatmap(
+    audio_plot,
+    TARGET_SAMPLE_RATE,
+    post_similarity=similarity,
+    duration=DURATION,
+    negative_class=NEGATIVE_CLASS,
+    figsize=(14, 8),
+    save_path=output_path,
+)
 
 ```
 
 ## Pretrained Models
-The pretrained checkpoints can be found in [here](https://huggingface.co/lukewys/laion_clap/tree/main).
-Please refer to the previous section for how to load and run the checkpoints.
-For the PyPI library, [630k-audioset-best.pt](https://huggingface.co/lukewys/laion_clap/blob/main/630k-audioset-best.pt) and [630k-audioset-fusion-best.pt](https://huggingface.co/lukewys/laion_clap/blob/main/630k-audioset-fusion-best.pt) are our default models (non-fusion and fusion)
 
-We further provide below pretrained models according to your usages:
+The pretrained checkpoints can be found [here](https://huggingface.co/kechenadobe/OpenFLAM/blob/main/open_flam_oct17.pth).
 
-* For general audio less than 10-sec: [630k-audioset-best.pt](https://huggingface.co/lukewys/laion_clap/blob/main/630k-audioset-best.pt) or [630k-best.pt](https://huggingface.co/lukewys/laion_clap/blob/main/630k-best.pt)
-* For general audio with variable-length: [630k-audioset-fusion-best.pt](https://huggingface.co/lukewys/laion_clap/blob/main/630k-audioset-fusion-best.pt) or [630k-fusion-best.pt](https://huggingface.co/lukewys/laion_clap/blob/main/630k-fusion-best.pt)
-* For music: [music_audioset_epoch_15_esc_90.14.pt](https://huggingface.co/lukewys/laion_clap/blob/main/music_audioset_epoch_15_esc_90.14.pt)
-* For music and speech: [music_speech_epoch_15_esc_89.25.pt](https://huggingface.co/lukewys/laion_clap/blob/main/music_speech_epoch_15_esc_89.25.pt)
-* For speech, music and general audio: [music_speech_audioset_epoch_15_esc_89.98.pt](https://huggingface.co/lukewys/laion_clap/blob/main/music_speech_audioset_epoch_15_esc_89.98.pt)
+OpenFLAM automatically handles the downloading of the checkpoint. Please refer to the previous section for more details.
 
-The checkpoints list here for each model setting is the one with the highest average mAP score in training.
-The average mAP score is calculated by averaging 4 scores: A-->T mAP@10 on AudioCaps, and T-->A mAP@10 on AudioCaps, A-->T mAP@10 on Clotho, and T-->A mAP@10 on Clotho.
+## Datasets
 
-To use above pretrained models, you need to load the ckpt by yourself, as:
+The original experimental results reported in [our paper](https://arxiv.org/abs/2505.05335) were obtained by the model trained on internal datasets that are not publicly shareable.
 
-Update 2023.4.7: we have released 3 larger CLAP models trained on music, speech dataset in addition to LAION-Audio-630k. Here are descriptions of the model and their performance:
+OpenFLAM is trained **on all publicly available datasets**, including: 
 
- - `music_speech_audioset_epoch_15_esc_89.98.pt`: trained on music + speech + Audioset + LAION-Audio-630k. The zeroshot ESC50 performance is 89.98%, the GTZAN performance is 51%.
- - `music_audioset_epoch_15_esc_90.14.pt`: trained on music + Audioset + LAION-Audio-630k. The zeroshot ESC50 performance is 90.14%, the GTZAN performance is 71%.
- - `music_speech_epoch_15_esc_89.25.pt`: trained on music + speech + LAION-Audio-630k. The zeroshot ESC50 performance is 89.25%, the GTZAN performance is 69%.
+1. Datasets with coarse (aka, global or weak) labels: AudioSet-ACD (a LLM-based captioning for AudioSet), FreeSound, WavCaps, AudioCaps, Clotho;
+2. Datasets with fine-grained (aka, local or strong) labels: AudioSet Strong, UrbanSED, DESED, Maestro, and Simulation data from AudioSet-ACD & FreeSound.
 
-The model uses a larger audio encoder. To load the model using the pip API:
-```python
-import laion_clap
-model = laion_clap.CLAP_Module(enable_fusion=False, amodel= 'HTSAT-base')
-model.load_ckpt('checkpoint_path/checkpoint_name.pt')
-```
-
-Please note that this is a temporary release for people who are working on larger-scale down-stream task. 
-We will release a more comprehensive version of the model with detailed experiments in the future.
-Please take your own risk when using this model.
-
-* All the new checkpoints did not trained with fusion. The training dataset size for `music_speech_audioset_epoch_15_esc_89.98.pt` is around 4M samples. The zeroshot GTZAN score is evaluated using the prompt `This audio is a <genre> song.`
-
-<!-- We provide the CLAP's performance on audio classification tasks under the zero-shot setting or the supervised setting. More results can be found at our paper.
+We report a comparison of the OpenFLAM performance to the original paper report (the global retrieval metrics --ie, A2T and T2A-- are R@1 / R@5):
 <p align="center">
-  <img src="https://raw.githubusercontent.com/LAION-AI/CLAP/main/assets/clap-zeroshot.PNG" alt="Zero-shot Performance" width="100%"/>
-</p> -->
+  <img src="./assets/Exp.png" alt="FLAM Exp" width="100%"/>
+</p>
 
-
-
-
-## Environment Installation
-If you want to check and reuse our model into your project instead of directly using the pip library, you need to install the same environment as we use, please run the following command:
-```bash
-conda create env -n clap python=3.10
-conda activate clap
-git clone https://github.com/LAION-AI/CLAP.git
-cd CLAP
-# you can also install pytorch by following the official instruction (https://pytorch.org/get-started/locally/)
-pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0+cu113 -f https://download.pytorch.org/whl/torch_stable.html
-pip install -r requirements.txt
-```
-## Dataset format
-We use training data in webdataset format. For details of our dataset please see https://github.com/LAION-AI/audio-dataset.
-
-Due to copyright reasons, we cannot release the dataset we train this model on. However, we released [LAION-audio-630K](https://github.com/LAION-AI/audio-dataset/tree/main/laion-audio-630k), the data source we used to compose the dataset with link to each audio and their caption. Please refer to [LAION-audio-630K](https://github.com/LAION-AI/audio-dataset/tree/main/laion-audio-630k) for more details. You could download the dataset, preprocess it on your own and train it locally. To train on the local dataset, please change the `--remotedata` in training scripts (see [experiment_scripts](./experiment_scripts) folder) with `--datasetpath <your dir to datasets>`.
-
-You can find an example of our dataset format in [here](https://drive.google.com/drive/folders/1scyH43eQAcrBz-5fAw44C6RNBhC3ejvX?usp=sharing).
-It contains the full ESC50 dataset, split according to the first 5-fold split.
-
-## Training, Fine-tuning and Evaluation
-Please find the script of training, fine-tuning and evaluation (zero-shot and retrieval) in the [experiment_scripts](./experiment_scripts) folder. 
-The scripts included there are the one we used to train our model on a SLURM cluster. 
-You need to change the script to fit your own environment.
-For example, in a single machine multi-GPU setting, you might want to use `torchrun` instead of `srun` to run the script.
-To train on a single GPU machine, use `CUDA_VISIBLE_DEVICES=0 python -m ...` instead of `srun`.
-We use [Weights and Biases](https://wandb.ai/site) for experiment logging. You need to configure the weights and biases in your environment.
-To train on local dataset, please change the `--remotedata` in training scripts (see [experiment_scripts](./experiment_scripts) folder) with `--datasetpath <your dir to datasets>`.
-
-## Core Code
-Please refer to [main.py](https://github.com/LAION-AI/CLAP/blob/laion_clap_pip/src/laion_clap/training/main.py), [train.py](https://github.com/LAION-AI/CLAP/blob/laion_clap_pip/src/laion_clap/training/train.py), [data.py](https://github.com/LAION-AI/CLAP/blob/laion_clap_pip/src/laion_clap/training/data.py),and [model.py](https://github.com/LAION-AI/CLAP/blob/laion_clap_pip/src/laion_clap/clap_module/model.py) to quicly get familiar with our model.
-
-
-## Reproducibility
-An example of the preprocessed Clotho dataset in webdataset format can be download [here](https://drive.google.com/drive/folders/1mU9mBOe11jTFCrQRJQsUa4S-3TlNuYoI?usp=sharing) (by downloading, you will be agreeing the license described in the [Clotho dataset](https://zenodo.org/record/3490684#.Y9ALPeyZP1w)). The audio encoder pretrained with 48kHz AudioSet can be found [here](https://drive.google.com/drive/folders/1SMQyzJvc6DwJNuhQ_WI8tlCFL5HG2vk6?usp=sharing), where `HTSAT-fullset-imagenet-map=0.467.ckpt` is the checkpoint used to initalize our HTSAT audio encoder. You should get similar result by loading from the audio encoder checkpoint and training on same dataset.
-
-The script to train the model on Clotho dataset is included [here](experiment_scripts/train-only-clotho.sh). You need to replace the `datasetpath` and `pretrained-audio` to pointing to your own directory. You could check the [report](https://stability.wandb.io/clap/clap/reports/CLAP-trained-on-Clotho-dataset--VmlldzoyNzY?accessToken=c0erq9hhp7h880jclihd9j9if679s6bylwto33vo14yo5jg40ppe38qeoafoonpz) of the training script on a single A100 GPU for reference.
-
-Because most of the dataset has copyright restriction, unfortunatly we cannot directly share other preprocessed datasets. The caption generated by keyword-to-caption model for Audioset can be found [here](https://github.com/LAION-AI/audio-dataset/tree/main/laion-audio-630k#keyword-to-caption-augmentation)
-
-
-## Zeroshot Classification with ESC50 official split
-
-Here is an example code to run the zeroshot classification on **first** ESC50 official split with the pip API:
-
-```python
-import laion_clap
-import glob
-import json
-import torch
-import numpy as np
-
-device = torch.device('cuda:0')
-
-# download https://drive.google.com/drive/folders/1scyH43eQAcrBz-5fAw44C6RNBhC3ejvX?usp=sharing and extract ./ESC50_1/test/0.tar to ./ESC50_1/test/
-esc50_test_dir = './ESC50_1/test/*/'
-class_index_dict_path = './class_labels/ESC50_class_labels_indices_space.json'
-
-# Load the model
-model = laion_clap.CLAP_Module(enable_fusion=False, device=device)
-model.load_ckpt()
-
-# Get the class index dict
-class_index_dict = {v: k for v, k in json.load(open(class_index_dict_path)).items()}
-
-# Get all the data
-audio_files = sorted(glob.glob(esc50_test_dir + '**/*.flac', recursive=True))
-json_files = sorted(glob.glob(esc50_test_dir + '**/*.json', recursive=True))
-ground_truth_idx = [class_index_dict[json.load(open(jf))['tag'][0]] for jf in json_files]
-
-with torch.no_grad():
-    ground_truth = torch.tensor(ground_truth_idx).view(-1, 1)
-
-    # Get text features
-    all_texts = ["This is a sound of " + t for t in class_index_dict.keys()]
-    text_embed = model.get_text_embedding(all_texts)
-    audio_embed = model.get_audio_embedding_from_filelist(x=audio_files)
-
-    ranking = torch.argsort(torch.tensor(audio_embed) @ torch.tensor(text_embed).t(), descending=True)
-    preds = torch.where(ranking == ground_truth)[1]
-    preds = preds.cpu().numpy()
-
-    metrics = {}
-    metrics[f"mean_rank"] = preds.mean() + 1
-    metrics[f"median_rank"] = np.floor(np.median(preds)) + 1
-    for k in [1, 5, 10]:
-        metrics[f"R@{k}"] = np.mean(preds < k)
-    # map@10
-    metrics[f"mAP@10"] = np.mean(np.where(preds < 10, 1 / (preds + 1), 0.0))
-
-    print(
-        f"Zeroshot Classification Results: "
-        + "\t".join([f"{k}: {round(v, 4):.4f}" for k, v in metrics.items()])
-    )
-```
-
-For ESC50 dataset, you could either download our processed ESC50 in webdataset format 
-from [here](https://drive.google.com/drive/folders/1scyH43eQAcrBz-5fAw44C6RNBhC3ejvX?usp=sharing), and extract the 
-`./test/0.tar` to `./test/`. Or you could download the original ESC50 dataset and 
-preprocess the label to the format of `class_labels/ESC50_class_labels_indices_space.json` by yourself (replace `_` with space).
-
-The result should be the same as the following:
-
-For `model = laion_clap.CLAP_Module(enable_fusion=True, device=device)`: `mean_rank: 1.2425	median_rank: 1.0000	R@1: 0.9050	R@5: 0.9900	R@10: 0.9925	mAP@10: 0.9407`
-
-For `model = laion_clap.CLAP_Module(enable_fusion=False, device=device)`: `mean_rank: 1.1450	median_rank: 1.0000	R@1: 0.9275	R@5: 0.9975	R@10: 1.0000	mAP@10: 0.9556`
-
-Note that the results is slightly higher than the reported results in the paper, because we use the train + test data of ESC50 and removing the data overlap in other training datasets (mainly freesound).
 
 ## Citation
-If you find this project and the LAION-Audio-630K dataset useful, please cite our paper:
+
+If you use OpenFLAM, please cite our main work:
+
+```
+@inproceedings{flam2025,
+  title = {FLAM: Frame-Wise Language-Audio Modeling},
+  author = {Yusong Wu and Christos Tsirigotis and Ke Chen and Cheng-Zhi Anna Huang and Aaron Courville and Oriol Nieto and Prem Seetharaman and Justin Salamon},
+  booktitle={International Conference on Machine Learning, ICML},
+  year = {2025}
+}
+
+```
+
+Related works:
+
 ```
 @inproceedings{laionclap2023,
   title = {Large-scale Contrastive Language-Audio Pretraining with Feature Fusion and Keyword-to-Caption Augmentation},
@@ -739,10 +264,3 @@ If you find this project and the LAION-Audio-630K dataset useful, please cite ou
   year = {2022}
 }
 ```
-
-## Acknowledgements
-
-This project is working in progress, thus the codebase and model might not be perfect or bug-free. 
-We will very much appreciate any kind of contribution or and issue raised.
-If you find a bug or have any suggestion, please feel free to open an issue or contact us.
-If you would actively contribute to this project, please join the discord of LAION.

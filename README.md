@@ -4,7 +4,7 @@
 </p>
 <p align="center">
   <a href="https://arxiv.org/abs/2505.05335"><img src="https://img.shields.io/badge/arXiv-2505.05335-brightgreen.svg?style=flat-square"/></a>
-  <a href="https://test.pypi.org/project/openflam"><img src="https://badge.fury.io/py/openflam"/></a>
+  <a href="https://pypi.org/project/openflam"><img src="https://badge.fury.io/py/openflam.svg"/></a>
 </p>
  
 ### Joint Audio and Text Embeddings via Framewise Language-Audio Modeling (FLAM)
@@ -36,9 +36,13 @@ Two examples are provided:
 
 For the API documentation, please refer to [hook.py](./src/openflam/hook.py).
 
+
+### To obtain audio and text embeddings
+
+Please refer to [embedding_inference.py](./test/embedding_inference.py):
+
 ```python
 import os
-
 import librosa
 import openflam
 import torch
@@ -88,6 +92,80 @@ flamgram = flam.get_local_similarity(
     method="unbiased",
     cross_product=True,
 )
+```
+
+### To perform sound event localization and plot the diagram
+
+Please refer to [sed_inference_and_plot.py](./test/sed_inference_and_plot.py). 
+
+You should be able to see [such plot](./test/sed_output/sed_heatmap_23s-33s.png) by running the below codes:
+
+```python
+import torch
+import numpy as np
+import librosa
+import scipy
+from pathlib import Path
+import openflam
+from openflam.module.plot_utils import plot_sed_heatmap
+
+flam_wrapper = openflam.OpenFLAM(
+      model_name="v1-base", default_ckpt_path="/tmp/openflam"
+)
+flam_wrapper.to("cuda")
+
+# Load and prepare audio
+audio, sr = librosa.load("test_data/test_example.mp3", sr=MODEL_SAMPLE_RATE)
+audio = audio[int(22. * sr) : int(33. * sr)]
+
+# Convert to tensor and move to device
+audio_tensor = torch.tensor(audio).unsqueeze(0).to("cuda")
+
+# Run inference
+with torch.no_grad():
+    # Get local similarity using the wrapper's built-in method
+    # This uses the unbiased method (Eq. 9 in the paper)
+    act_map_cross = (
+        flam_wrapper.get_local_similarity(
+            audio_tensor,
+            TEXTS,
+            method="unbiased",
+            cross_product=True,
+        )
+        .cpu()
+        .numpy()
+    )
+
+# Apply median filtering for smoother results
+act_map_filter = []
+for i in range(act_map_cross.shape[0]):
+    act_map_filter.append(
+        scipy.ndimage.median_filter(act_map_cross[i], (1, MEDIAN_FILTER))
+    )
+act_map_filter = np.array(act_map_filter)
+
+# Prepare similarity dictionary for plotting
+similarity = {
+    f"{TEXTS[i]}": act_map_filter[0][i] for i in range(len(TEXTS))
+}
+
+# Prepare audio for plotting (resample to 32kHz)
+audio_plot = librosa.resample(
+    audio, orig_sr=MODEL_SAMPLE_RATE, target_sr=TARGET_SAMPLE_RATE
+)
+
+# Generate and save visualization
+output_path = "sed_output/sed_heatmap_22s-33s.png"
+plot_sed_heatmap(
+    audio_plot,
+    TARGET_SAMPLE_RATE,
+    post_similarity=similarity,
+    duration=DURATION,
+    negative_class=NEGATIVE_CLASS,
+    figsize=(14, 8),
+    save_path=output_path,
+)
+
 ```
 
 ## Pretrained Models
