@@ -12,7 +12,14 @@
 FLAM is a cutting-edge language–audio model that supports both zero-shot sound even detection and large-scale audio retrieval via free-form text.
 
 This code accompanies the following ICML 2025 publication:
- - [FLAM: Frame-Wise Language-Audio Modeling](https://arxiv.org/abs/2505.05335)
+```
+@inproceedings{flam2025,
+  title = {FLAM: Frame-Wise Language-Audio Modeling},
+  author = {Yusong Wu and Christos Tsirigotis and Ke Chen and Cheng-Zhi Anna Huang and Aaron Courville and Oriol Nieto and Prem Seetharaman and Justin Salamon},
+  booktitle={International Conference on Machine Learning, ICML},
+  year = {2025}
+}
+```
 
 ## Architecture
 
@@ -90,6 +97,10 @@ flamgram = flam.get_local_similarity(
 )
 ```
 
+## License
+
+Both **code** and **models** for OpenFLAM are released under an [Adobe Research License](./LICENSE). Please, review it carefully before using this technology.
+
 ## Pretrained Models
 
 The pretrained checkpoints can be found [here](https://huggingface.co/kechenadobe/OpenFLAM/blob/main/open_flam_oct17.pth).
@@ -122,22 +133,5 @@ If you use OpenFLAM, please cite our main work:
   booktitle={International Conference on Machine Learning, ICML},
   year = {2025}
 }
-
 ```
 
-Related works:
-
-```
-@inproceedings{laionclap2023,
-  title = {Large-scale Contrastive Language-Audio Pretraining with Feature Fusion and Keyword-to-Caption Augmentation},
-  author = {Wu*, Yusong and Chen*, Ke and Zhang*, Tianyu and Hui*, Yuchen and Berg-Kirkpatrick, Taylor and Dubnov, Shlomo},
-  booktitle={IEEE International Conference on Acoustics, Speech and Signal Processing, ICASSP},
-  year = {2023}
-}
-@inproceedings{htsatke2022,
-  author = {Ke Chen and Xingjian Du and Bilei Zhu and Zejun Ma and Taylor Berg-Kirkpatrick and Shlomo Dubnov},
-  title = {HTS-AT: A Hierarchical Token-Semantic Audio Transformer for Sound Classification and Detection},
-  booktitle={IEEE International Conference on Acoustics, Speech and Signal Processing, ICASSP},
-  year = {2022}
-}
-```
