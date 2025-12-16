@@ -3,7 +3,7 @@ requires = ["setuptools >= 77.0.3"]
 build-backend = "setuptools.build_meta"
 [project]
 name = "openflam"
-version = "0.9.0"
+version = "1.0.0"
 authors = [
   { name="Ke Chen", email="kechen@adobe.com" },
   { name="Oriol Nieto", email="onieto@adobe.com" },

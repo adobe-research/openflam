@@ -5,11 +5,6 @@ Paper: https://arxiv.org/abs/2505.05335
 Code Maintainers: Ke Chen, Yusong Wu, Oriol Nieto, Prem Seetharaman
 Support: Adobe Research
 """
-
-import sys
-
-sys.path.insert(0, "src")
-
 import torch
 import numpy as np
 import librosa
