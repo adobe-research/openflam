@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "openflam"
+version = "0.0.1"
+authors = [
+  { name="Ke Chen", email="kechen@adobe.com" },
+  { name="Yusong Wu" }
+]
+maintainers = [
+  { name="Ke Chen", email="kechen@adobe.com" },
+  { name="Yusong Wu" }
+]
+description = "Framewise Lanaguge-Audio Modeling"
+license = {file = "LICENSE"}
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy >= 1.23.5, < 2.0.0",
+  "soundfile",
+  "librosa",
+  "torchlibrosa",
+  "torch >= 2.6.0, < 2.8.0",
+  "torchaudio >= 2.6.0, < 2.8.0",
+  "torchvision >= 0.21.0, < 0.23.0",
+  "lightning",
+  "transformers==4.56.1",
+  "matplotlib",
+]
+classifiers = [
+    'Development Status :: 3 - Alpha',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Science/Research',
+    'License :: OSI Approved :: Apache Software License',
+    'Topic :: Scientific/Engineering :: Artificial Intelligence',
+]
+
+[project.urls]
+"Homepage" = "https://github.com/kechen_adobe/OpenFLAM"
+"Bug Tracker" = "https://github.com/kechen_adobe/OpenFLAM/issues"

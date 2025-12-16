@@ -1,0 +1,10 @@
+numpy<2.0.0,>=1.23.5
+soundfile
+librosa
+torchlibrosa
+torch<2.8.0,>=2.6.0
+torchaudio<2.8.0,>=2.6.0
+torchvision<0.23.0,>=0.21.0
+lightning
+transformers==4.56.1
+matplotlib

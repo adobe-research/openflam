@@ -1,0 +1,10 @@
+Clotho-1
+{'num_samples': '1045.0000', 'cumulative_loss': '7.5070', 'text_to_audio_mean_rank': '62.2477', 'text_to_audio_median_rank': '14.0000', 'text_to_audio_R@1': '0.1353', 'text_to_audio_R@5': '0.3294', 'text_to_audio_R@10': '0.4450', 'text_to_audio_mAP@10': '0.2204', 'audio_to_text_mAP@10': '0.1350', 'audio_to_text_R@1': '0.1675', 'audio_to_text_R@5': '0.3761', 'audio_to_text_R@10': '0.5072'}
+Clotho-2
+{'num_samples': '1045.0000', 'cumulative_loss': '7.5728', 'text_to_audio_mean_rank': '63.8337', 'text_to_audio_median_rank': '15.0000', 'text_to_audio_R@1': '0.1391', 'text_to_audio_R@5': '0.3361', 'text_to_audio_R@10': '0.4402', 'text_to_audio_mAP@10': '0.2137', 'audio_to_text_mAP@10': '0.1324', 'audio_to_text_R@1': '0.1713', 'audio_to_text_R@5': '0.3926', 'audio_to_text_R@10': '0.4995'}
+Clotho-3
+{'num_samples': '1045.0000', 'cumulative_loss': '7.4799', 'text_to_audio_mean_rank': '63.3116', 'text_to_audio_median_rank': '14.0000', 'text_to_audio_R@1': '0.1326', 'text_to_audio_R@5': '0.3372', 'text_to_audio_R@10': '0.4509', 'text_to_audio_mAP@10': '0.2200', 'audio_to_text_mAP@10': '0.1394', 'audio_to_text_R@1': '0.1684', 'audio_to_text_R@5': '0.3828', 'audio_to_text_R@10': '0.5081'}
+ASFX
+{'num_samples': '10129.0000', 'cumulative_loss': '9.7290', 'audio_to_text_mean_rank': '1096.4380', 'audio_to_text_median_rank': '170.0000', 'audio_to_text_R@1': '0.0268', 'audio_to_text_R@5': '0.0959', 'audio_to_text_R@10': '0.1548', 'audio_to_text_mAP@10': '0.0576', 'text_to_audio_mean_rank': '821.4584', 'text_to_audio_median_rank': '146.0000', 'text_to_audio_R@1': '0.0282', 'text_to_audio_R@5': '0.1011', 'text_to_audio_R@10': '0.1597', 'text_to_audio_mAP@10': '0.0606'}
+AudioCaps
+{'num_samples': '953.0000', 'cumulative_loss': '3.7994', 'text_to_audio_mean_rank': '14.7859', 'text_to_audio_median_rank': '3.0000', 'text_to_audio_R@1': '0.3173', 'text_to_audio_R@5': '0.6382', 'text_to_audio_R@10': '0.7729', 'text_to_audio_mAP@10': '0.4523', 'audio_to_text_mAP@10': '0.4143', 'audio_to_text_R@1': '0.4428', 'audio_to_text_R@5': '0.7650', 'audio_to_text_R@10': '0.8751'}
