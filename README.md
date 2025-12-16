@@ -105,7 +105,7 @@ Both **code** and **models** for OpenFLAM are released under an [Adobe Research 
 
 The pretrained checkpoints can be found [here](https://huggingface.co/kechenadobe/OpenFLAM/blob/main/open_flam_oct17.pth).
 
-OpenFLAM automatically handles the downloading of the checkpoint. Please refer to the previous section for more details.
+OpenFLAM automatically handles the downloading of the checkpoint. Please, refer to the previous section for more details.
 
 ## Datasets
 
