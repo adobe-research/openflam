@@ -105,7 +105,7 @@ OpenFLAM is trained **on all publicly available datasets**, including:
 1. Datasets with coarse (aka, global or weak) labels: AudioSet-ACD (a LLM-based captioning for AudioSet), FreeSound, WavCaps, AudioCaps, Clotho;
 2. Datasets with fine-grained (aka, local or strong) labels: AudioSet Strong, UrbanSED, DESED, Maestro, and Simulation data from AudioSet-ACD & FreeSound.
 
-We report a comparison of the OpenFLAM performance to the original paper report:
+We report a comparison of the OpenFLAM performance to the original paper report (the global retrieval metrics --ie, A2T and T2A-- are R@1 / R@5):
 <p align="center">
   <img src="./assets/Exp.png" alt="FLAM Exp" width="100%"/>
 </p>
