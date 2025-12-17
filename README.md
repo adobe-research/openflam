@@ -116,13 +116,25 @@ from pathlib import Path
 import openflam
 from openflam.module.plot_utils import plot_sed_heatmap
 
+TEXTS = [
+    "man speaking",
+    "man talking through a walkie-talkie",
+    "music",
+    "breathing sound",
+    "ratcheting",
+]
+
+NEGATIVE_CLASS = [
+    "ratcheting",
+]
+
 flam_wrapper = openflam.OpenFLAM(
       model_name="v1-base", default_ckpt_path="/tmp/openflam"
 )
 flam_wrapper.to("cuda")
 
 # Load and prepare audio
-audio, sr = librosa.load("test_data/test_example.mp3", sr=MODEL_SAMPLE_RATE)
+audio, sr = librosa.load("test_data/test_example.mp3", sr=48000)
 audio = audio[int(22. * sr) : int(33. * sr)]
 
 # Convert to tensor and move to device
@@ -147,7 +159,7 @@ with torch.no_grad():
 act_map_filter = []
 for i in range(act_map_cross.shape[0]):
     act_map_filter.append(
-        scipy.ndimage.median_filter(act_map_cross[i], (1, MEDIAN_FILTER))
+        scipy.ndimage.median_filter(act_map_cross[i], (1, 3))
     )
 act_map_filter = np.array(act_map_filter)
 
@@ -158,16 +170,16 @@ similarity = {
 
 # Prepare audio for plotting (resample to 32kHz)
 audio_plot = librosa.resample(
-    audio, orig_sr=MODEL_SAMPLE_RATE, target_sr=TARGET_SAMPLE_RATE
+    audio, orig_sr=48000, target_sr=32000
 )
 
 # Generate and save visualization
 output_path = "sed_output/sed_heatmap_22s-33s.png"
 plot_sed_heatmap(
     audio_plot,
-    TARGET_SAMPLE_RATE,
+    32000,
     post_similarity=similarity,
-    duration=DURATION,
+    duration=10.0,
     negative_class=NEGATIVE_CLASS,
     figsize=(14, 8),
     save_path=output_path,
