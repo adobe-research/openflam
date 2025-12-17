@@ -66,7 +66,7 @@ flam = openflam.OpenFLAM(
 flam.sanity_check()
 
 # load audio from 22-33 seconds
-audio, sr = librosa.load("test_data/test_example.mp3", sr=SR)
+audio, sr = librosa.load("test/test_data/test_example.mp3", sr=SR)
 audio = audio[int(23. * sr): int(33. * sr)]
 audio_samples = torch.tensor(audio).unsqueeze(0).to(DEVICE) # [B, 480000 = 10 sec]
 
