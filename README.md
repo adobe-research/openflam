@@ -177,7 +177,7 @@ plot_sed_heatmap(
 
 ## License
 
-Both **code** and **models** for OpenFLAM are released under an [Adobe Research License](./LICENSE). Please, review it carefully before using this technology.
+Both **code** and **models** for OpenFLAM are released under a non-commercial [Adobe Research License](./LICENSE). Please, review it carefully before using this technology.
 
 ## Pretrained Models
 
