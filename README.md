@@ -21,6 +21,8 @@ This code accompanies the following ICML 2025 publication:
 }
 ```
 
+Main [FLAM website](https://flam-model.github.io/).
+
 ## Architecture
 
 FLAM is based on contrastive language-audio pretraining, known as CLAP, and improve its capability by supporting the frame-wise event localization via learnable text and audio biases and scales.  
