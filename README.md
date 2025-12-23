@@ -5,6 +5,7 @@
 <p align="center">
   <a href="https://arxiv.org/abs/2505.05335"><img src="https://img.shields.io/badge/arXiv-2505.05335-brightgreen.svg?style=flat-square"/></a>
   <a href="https://pypi.org/project/openflam"><img src="https://badge.fury.io/py/openflam.svg"/></a>
+  <a href="https://flam-model.github.io/"><img alt="Static Badge" src="https://img.shields.io/badge/Flam%20Website-8A2BE2"></a>
 </p>
  
 ### Joint Audio and Text Embeddings via Framewise Language-Audio Modeling (FLAM)
@@ -20,8 +21,6 @@ This code accompanies the following ICML 2025 publication:
   year = {2025}
 }
 ```
-
-Main [FLAM website](https://flam-model.github.io/).
 
 ## Architecture
 
