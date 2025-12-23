@@ -66,7 +66,7 @@ flam = openflam.OpenFLAM(
 # Sanity Check (Optional)
 flam.sanity_check()
 
-# load audio from 22-33 seconds
+# load audio
 audio, sr = librosa.load("test/test_data/test_example.wav", sr=SR)
 audio = audio[: int(10 * sr)]
 audio_samples = torch.tensor(audio).unsqueeze(0).to(DEVICE) # [B, 480000 = 10 sec]
@@ -134,7 +134,7 @@ flam = openflam.OpenFLAM(model_name="v1-base", default_ckpt_path="/tmp/openflam"
 flam.to(DEVICE)
 
 # Load and prepare audio
-audio, sr = librosa.load("test/test_data/test_example.mp3", sr=SR)
+audio, sr = librosa.load("test/test_data/test_example.wav", sr=SR)
 audio = audio[: int(10 * sr)]
 
 # Convert to tensor and move to device
@@ -179,6 +179,8 @@ plot_sed_heatmap(
     figsize=(14, 8),
     save_path=output_path,
 )
+
+print(f"Plot saved: {output_path}")
 ```
 
 ## License
