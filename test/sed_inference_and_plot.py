@@ -24,22 +24,21 @@ MEDIAN_FILTER = 3  # Median filter size for post-processing
 NUM_FRAMES = int(DURATION * EMB_RATE)
 # Change the audio path to the audio you want to test.
 # In here we show the example of https://www.youtube.com/watch?v=tA1s65o_kYM.
-AUDIO_PATH = "test_data/test_example.mp3"
-AUDIO_START = 23
-AUDIO_END = 33
+AUDIO_PATH = "test_data/test_example.wav"
+AUDIO_START = 0
+AUDIO_END = 10
 OUTPUT_DIR = Path("sed_output")  # Directory to save output figures
 # Define target sound events
 TEXTS = [
-    "man speaking",
-    "man talking through a walkie-talkie",
-    "music",
-    "breathing sound",
-    "ratcheting",
+    "female speech, woman speaking",
+    "mechanisms",
+    "animal",
+    "explosion"
 ]
 
 # Define negative class (sounds that shouldn't be in the audio)
 NEGATIVE_CLASS = [
-    "ratcheting",
+    "explosion"
 ]
 
 def main():

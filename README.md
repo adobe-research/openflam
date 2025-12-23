@@ -67,17 +67,16 @@ flam = openflam.OpenFLAM(
 flam.sanity_check()
 
 # load audio from 22-33 seconds
-audio, sr = librosa.load("test/test_data/test_example.mp3", sr=SR)
-audio = audio[int(23. * sr): int(33. * sr)]
+audio, sr = librosa.load("test/test_data/test_example.wav", sr=SR)
+audio = audio[: int(10 * sr)]
 audio_samples = torch.tensor(audio).unsqueeze(0).to(DEVICE) # [B, 480000 = 10 sec]
 
 # Define text
 text_samples = [
-    "man speaking",
-    "man talking through a walkie-talkie",
-    "music",
-    "breathing sound",
-    "ratcheting"
+    "female speech, woman speaking",
+    "mechanisms",
+    "animal",
+    "explosion"
 ]
 
 # Get Global Audio Features (10sec = 0.1Hz embeddings)
@@ -118,15 +117,14 @@ import openflam
 from openflam.module.plot_utils import plot_sed_heatmap
 
 TEXTS = [
-    "man speaking",
-    "man talking through a walkie-talkie",
-    "music",
-    "breathing sound",
-    "ratcheting",
+    "female speech, woman speaking",
+    "mechanisms",
+    "animal",
+    "explosion"
 ]
 
 NEGATIVE_CLASS = [
-    "ratcheting",
+    "explosion"
 ]
 
 SR = 48000
@@ -137,7 +135,7 @@ flam.to(DEVICE)
 
 # Load and prepare audio
 audio, sr = librosa.load("test/test_data/test_example.mp3", sr=SR)
-audio = audio[int(23 * sr) : int(33 * sr)]
+audio = audio[: int(10 * sr)]
 
 # Convert to tensor and move to device
 audio_tensor = torch.tensor(audio).unsqueeze(0).to(DEVICE)
@@ -171,7 +169,7 @@ target_sr = 32000
 audio_plot = librosa.resample(audio, orig_sr=SR, target_sr=target_sr)
 
 # Generate and save visualization
-output_path = "sed_heatmap_22s-33s.png"
+output_path = "sed_heatmap.png"
 plot_sed_heatmap(
     audio_plot,
     target_sr,

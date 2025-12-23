@@ -23,17 +23,16 @@ flam_wrapper.to("cuda")
 flam_wrapper.sanity_check()
 
 # load audio from 22-33 seconds
-audio, sr = librosa.load("test_data/test_example.mp3", sr=48000)
-audio = audio[int(23. * sr): int(33. * sr)]
+audio, sr = librosa.load("test_data/test_example.wav", sr=48000)
+audio = audio[: int(10 * sr)]
 
 # Convert to tensor and move to device
 audio_samples = torch.tensor(audio).unsqueeze(0) # [B, 480000 = 10 sec]
 text_samples = [
-    "man speaking",
-    "man talking through a walkie-talkie",
-    "music",
-    "breathing sound",
-    "ratcheting"
+    "female speech, woman speaking",
+    "mechanisms",
+    "animal",
+    "explosion"
 ]
 
 # Get Audio and Text Embeddings
