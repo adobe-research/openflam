@@ -136,7 +136,7 @@ flam.to(DEVICE)
 
 # Load and prepare audio
 audio, sr = librosa.load("test/test_data/test_example.mp3", sr=48000)
-audio = audio[int(22.0 * sr):int(33.0 * sr)]
+audio = audio[int(23 * sr):int(33 * sr)]
 
 # Convert to tensor and move to device
 audio_tensor = torch.tensor(audio).unsqueeze(0).to(DEVICE)
