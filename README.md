@@ -109,11 +109,11 @@ Please refer to [sed_inference_and_plot.py](./test/sed_inference_and_plot.py).
 You should be able to see [such plot](./test/sed_output/sed_heatmap_23s-33s.png) by running the below codes:
 
 ```python
-import torch
-import numpy as np
 import librosa
+import numpy as np
 import scipy
-from pathlib import Path
+import torch
+
 import openflam
 from openflam.module.plot_utils import plot_sed_heatmap
 
@@ -129,24 +129,24 @@ NEGATIVE_CLASS = [
     "ratcheting",
 ]
 
-flam_wrapper = openflam.OpenFLAM(
-      model_name="v1-base", default_ckpt_path="/tmp/openflam"
-)
-flam_wrapper.to("cuda")
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+
+flam = openflam.OpenFLAM(model_name="v1-base", default_ckpt_path="/tmp/openflam")
+flam.to(DEVICE)
 
 # Load and prepare audio
-audio, sr = librosa.load("test_data/test_example.mp3", sr=48000)
-audio = audio[int(22. * sr) : int(33. * sr)]
+audio, sr = librosa.load("test/test_data/test_example.mp3", sr=48000)
+audio = audio[int(22.0 * sr):int(33.0 * sr)]
 
 # Convert to tensor and move to device
-audio_tensor = torch.tensor(audio).unsqueeze(0).to("cuda")
+audio_tensor = torch.tensor(audio).unsqueeze(0).to(DEVICE)
 
 # Run inference
 with torch.no_grad():
     # Get local similarity using the wrapper's built-in method
     # This uses the unbiased method (Eq. 9 in the paper)
     act_map_cross = (
-        flam_wrapper.get_local_similarity(
+        flam.get_local_similarity(
             audio_tensor,
             TEXTS,
             method="unbiased",
@@ -159,23 +159,17 @@ with torch.no_grad():
 # Apply median filtering for smoother results
 act_map_filter = []
 for i in range(act_map_cross.shape[0]):
-    act_map_filter.append(
-        scipy.ndimage.median_filter(act_map_cross[i], (1, 3))
-    )
+    act_map_filter.append(scipy.ndimage.median_filter(act_map_cross[i], (1, 3)))
 act_map_filter = np.array(act_map_filter)
 
 # Prepare similarity dictionary for plotting
-similarity = {
-    f"{TEXTS[i]}": act_map_filter[0][i] for i in range(len(TEXTS))
-}
+similarity = {f"{TEXTS[i]}": act_map_filter[0][i] for i in range(len(TEXTS))}
 
 # Prepare audio for plotting (resample to 32kHz)
-audio_plot = librosa.resample(
-    audio, orig_sr=48000, target_sr=32000
-)
+audio_plot = librosa.resample(audio, orig_sr=48000, target_sr=32000)
 
 # Generate and save visualization
-output_path = "sed_output/sed_heatmap_22s-33s.png"
+output_path = "sed_heatmap_22s-33s.png"
 plot_sed_heatmap(
     audio_plot,
     32000,
@@ -185,7 +179,6 @@ plot_sed_heatmap(
     figsize=(14, 8),
     save_path=output_path,
 )
-
 ```
 
 ## License
