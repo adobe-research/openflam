@@ -129,14 +129,15 @@ NEGATIVE_CLASS = [
     "ratcheting",
 ]
 
+SR = 48000
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 flam = openflam.OpenFLAM(model_name="v1-base", default_ckpt_path="/tmp/openflam")
 flam.to(DEVICE)
 
 # Load and prepare audio
-audio, sr = librosa.load("test/test_data/test_example.mp3", sr=48000)
-audio = audio[int(23 * sr):int(33 * sr)]
+audio, sr = librosa.load("test/test_data/test_example.mp3", sr=SR)
+audio = audio[int(23 * sr) : int(33 * sr)]
 
 # Convert to tensor and move to device
 audio_tensor = torch.tensor(audio).unsqueeze(0).to(DEVICE)
@@ -166,13 +167,14 @@ act_map_filter = np.array(act_map_filter)
 similarity = {f"{TEXTS[i]}": act_map_filter[0][i] for i in range(len(TEXTS))}
 
 # Prepare audio for plotting (resample to 32kHz)
-audio_plot = librosa.resample(audio, orig_sr=48000, target_sr=32000)
+target_sr = 32000
+audio_plot = librosa.resample(audio, orig_sr=SR, target_sr=target_sr)
 
 # Generate and save visualization
 output_path = "sed_heatmap_22s-33s.png"
 plot_sed_heatmap(
     audio_plot,
-    32000,
+    target_sr,
     post_similarity=similarity,
     duration=10.0,
     negative_class=NEGATIVE_CLASS,
