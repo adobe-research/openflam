@@ -30,15 +30,16 @@ AUDIO_END = 10
 OUTPUT_DIR = Path("sed_output")  # Directory to save output figures
 # Define target sound events
 TEXTS = [
-    "female speech, woman speaking",
-    "mechanisms",
-    "animal",
-    "explosion"
+    "breaking bones",
+    "mechanical beep",
+    "whoosh short",
+    "troll scream",
+    "female speaker"
 ]
 
 # Define negative class (sounds that shouldn't be in the audio)
 NEGATIVE_CLASS = [
-    "explosion"
+    "female speaker"
 ]
 
 def main():

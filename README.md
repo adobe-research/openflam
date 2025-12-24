@@ -73,10 +73,11 @@ audio_samples = torch.tensor(audio).unsqueeze(0).to(DEVICE) # [B, 480000 = 10 se
 
 # Define text
 text_samples = [
-    "female speech, woman speaking",
-    "mechanisms",
-    "animal",
-    "explosion"
+    "breaking bones",
+    "mechanical beep",
+    "whoosh short",
+    "troll scream",
+    "female speaker"
 ]
 
 # Get Global Audio Features (10sec = 0.1Hz embeddings)
@@ -117,14 +118,15 @@ import openflam
 from openflam.module.plot_utils import plot_sed_heatmap
 
 TEXTS = [
-    "female speech, woman speaking",
-    "mechanisms",
-    "animal",
-    "explosion"
+    "breaking bones",
+    "mechanical beep",
+    "whoosh short",
+    "troll scream",
+    "female speaker"
 ]
 
 NEGATIVE_CLASS = [
-    "explosion"
+    "female speaker"
 ]
 
 SR = 48000

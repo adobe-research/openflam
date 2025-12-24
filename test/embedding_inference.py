@@ -29,10 +29,11 @@ audio = audio[: int(10 * sr)]
 # Convert to tensor and move to device
 audio_samples = torch.tensor(audio).unsqueeze(0) # [B, 480000 = 10 sec]
 text_samples = [
-    "female speech, woman speaking",
-    "mechanisms",
-    "animal",
-    "explosion"
+    "breaking bones",
+    "mechanical beep",
+    "whoosh short",
+    "troll scream",
+    "female speaker"
 ]
 
 # Get Audio and Text Embeddings
