@@ -6,56 +6,62 @@ Code Maintainers: Ke Chen, Yusong Wu, Oriol Nieto, Prem Seetharaman
 Support: Adobe Research
 """
 
-import os
-import torch
 import librosa
+import torch
 
 import openflam
 
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+SR = 48000  # Sampling Rate (FLAM requires 48kHz)
 
-flam_wrapper = openflam.OpenFLAM(
-    model_name="v1-base", default_ckpt_path="/tmp/openflam"
+flam = openflam.OpenFLAM(model_name="v1-base", default_ckpt_path="/tmp/openflam").to(
+    DEVICE
 )
 
-flam_wrapper.to("cuda")
+# Sanity Check (Optional)
+flam.sanity_check()
 
-# Sanity Check
-flam_wrapper.sanity_check()
-
-# load audio from 22-33 seconds
-audio, sr = librosa.load("test_data/test_example.wav", sr=48000)
+# load audio
+audio, sr = librosa.load("test/test_data/test_example.wav", sr=SR)
 audio = audio[: int(10 * sr)]
+audio_samples = torch.tensor(audio).unsqueeze(0).to(DEVICE)  # [B, 480000 = 10 sec]
 
-# Convert to tensor and move to device
-audio_samples = torch.tensor(audio).unsqueeze(0) # [B, 480000 = 10 sec]
+# Define text
 text_samples = [
     "breaking bones",
     "mechanical beep",
     "whoosh short",
     "troll scream",
-    "female speaker"
+    "female speaker",
 ]
 
-# Get Audio and Text Embeddings
-audio_global_feature = flam_wrapper.get_global_audio_features(
-    audio_samples
-)  # [B, 512]
-audio_local_feature = flam_wrapper.get_local_audio_features(
+# Get Global Audio Features (10sec = 0.1Hz embeddings)
+audio_global_feature = flam.get_global_audio_features(audio_samples)  # [B, 512]
+
+# Get Local Audio Features (0.32sec = ~3Hz embeddings)
+audio_local_feature = flam.get_local_audio_features(
     audio_samples
 )  # [B, 32, 512] 32 is frame size (0.032 sec / frame)
 
-text_feature = flam_wrapper.get_text_features(text_samples)  # [B, 512]
+# Get Text Features
+text_feature = flam.get_text_features(text_samples)  # [B, 512]
 
-# Get Local Similarity for SED
-act_map_cross = flam_wrapper.get_local_similarity(
+# Get Local Similarity for Sound Event Detection (aka FLAMgram)
+flamgram = flam.get_local_similarity(
     audio_samples,
     text_samples,
     method="unbiased",
     cross_product=True,
 )
 
+# Calculate similarity (dot product)
+global_similarities = (text_feature @ audio_global_feature.T).squeeze(1)
+
+print("\nGlobal Cosine Similarities:")
+for text, score in zip(text_samples, global_similarities):
+    print(f"{text}: {score.item():.4f}")
 
 print("Audio Global Embedding Shape:", audio_global_feature.shape)
 print("Audio Local Embedding Shape:", audio_local_feature.shape)
 print("Text Embedding Shape:", text_feature.shape)
-print("Local Similarity Map Shape:", act_map_cross.shape)
+print("Local Similarity Map Shape:", flamgram.shape)
