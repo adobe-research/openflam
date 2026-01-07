@@ -16,7 +16,7 @@ import librosa.display
 plt.rcParams["font.family"] = "Times New Roman"
 
 
-def plot_spec(wav, sr, title="", vmin=-8, vmax=1, save_path=None):
+def plot_spec(wav, sr, title="", vmin=-8, vmax=1, save_path=None, eps=1e-6):
     """Plot and save the spectrogram.
 
     Args:
@@ -26,8 +26,9 @@ def plot_spec(wav, sr, title="", vmin=-8, vmax=1, save_path=None):
         vmin (float): Minimum value for the color scale. Defaults to -8.
         vmax (float): Maximum value for the color scale. Defaults to 1.
         save_path (str or Path): Path to save the spectrogram figure. If None, figure is not saved.
+        eps (float): Small value to avoid log(0). Defaults to 1e-6.
     """
-    spec = np.log(np.abs(librosa.stft(wav, n_fft=512 + 256)))
+    spec = np.log(np.abs(librosa.stft(wav, n_fft=512 + 256)) + eps)
     librosa.display.specshow(spec, sr=sr, vmin=vmin, vmax=vmax, cmap="magma")
     plt.title(title, fontsize=14)
     if save_path:

@@ -38,21 +38,8 @@ text_samples = [
 # Get Global Audio Features (10sec = 0.1Hz embeddings)
 audio_global_feature = flam.get_global_audio_features(audio_samples)  # [B, 512]
 
-# Get Local Audio Features (0.32sec = ~3Hz embeddings)
-audio_local_feature = flam.get_local_audio_features(
-    audio_samples
-)  # [B, 32, 512] 32 is frame size (0.032 sec / frame)
-
 # Get Text Features
 text_feature = flam.get_text_features(text_samples)  # [B, 512]
-
-# Get Local Similarity for Sound Event Detection (aka FLAMgram)
-flamgram = flam.get_local_similarity(
-    audio_samples,
-    text_samples,
-    method="unbiased",
-    cross_product=True,
-)
 
 # Calculate similarity (dot product)
 global_similarities = (text_feature @ audio_global_feature.T).squeeze(1)
@@ -62,6 +49,4 @@ for text, score in zip(text_samples, global_similarities):
     print(f"{text}: {score.item():.4f}")
 
 print("Audio Global Embedding Shape:", audio_global_feature.shape)
-print("Audio Local Embedding Shape:", audio_local_feature.shape)
 print("Text Embedding Shape:", text_feature.shape)
-print("Local Similarity Map Shape:", flamgram.shape)
