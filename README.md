@@ -46,23 +46,22 @@ Two examples are provided:
 For the API documentation, please refer to [hook.py](./src/openflam/hook.py).
 
 
-### To obtain audio and text embeddings
+### To obtain global audio and text embeddings
 
 Please refer to [embedding_inference.py](./test/embedding_inference.py):
 
 ```python
-import os
 import librosa
-import openflam
 import torch
 
+import openflam
 
-DEVICE = "cuda"  # cuda or cpu
-SR = 48000       # Sampling Rate (FLAM requires 48kHz)
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+SR = 48000  # Sampling Rate (FLAM requires 48kHz)
 
-flam = openflam.OpenFLAM(
-    model_name="v1-base", default_ckpt_path="/tmp/openflam"
-).to(DEVICE)
+flam = openflam.OpenFLAM(model_name="v1-base", default_ckpt_path="/tmp/openflam").to(
+    DEVICE
+)
 
 # Sanity Check (Optional)
 flam.sanity_check()
@@ -70,37 +69,33 @@ flam.sanity_check()
 # load audio
 audio, sr = librosa.load("test/test_data/test_example.wav", sr=SR)
 audio = audio[: int(10 * sr)]
-audio_samples = torch.tensor(audio).unsqueeze(0).to(DEVICE) # [B, 480000 = 10 sec]
+audio_samples = torch.tensor(audio).unsqueeze(0).to(DEVICE)  # [B, 480000 = 10 sec]
 
 # Define text
 text_samples = [
     "breaking bones",
-    "mechanical beep",
-    "whoosh short",
+    "metallic creak",
+    "tennis ball",
     "troll scream",
-    "female speaker"
+    "female speaker",
 ]
 
 # Get Global Audio Features (10sec = 0.1Hz embeddings)
-audio_global_feature = flam.get_global_audio_features(
-    audio_samples
-)  # [B, 512]
-
-# Get Local Audio Features (0.32sec = ~3Hz embeddings)
-audio_local_feature = flam.get_local_audio_features(
-    audio_samples
-)  # [B, 32, 512] 32 is frame size (0.032 sec / frame)
+audio_global_feature = flam.get_global_audio_features(audio_samples)  # [B, 512]
 
 # Get Text Features
 text_feature = flam.get_text_features(text_samples)  # [B, 512]
 
-# Get Local Similarity for Sound Event Detection
-flamgram = flam.get_local_similarity(
-    audio_samples,
-    text_samples,
-    method="unbiased",
-    cross_product=True,
-)
+# Calculate similarity (dot product)
+global_similarities = (text_feature @ audio_global_feature.T).squeeze(1)
+
+print("\nGlobal Cosine Similarities:")
+for text, score in zip(text_samples, global_similarities):
+    print(f"{text}: {score.item():.4f}")
+
+print("Audio Global Embedding Shape:", audio_global_feature.shape)
+print("Text Embedding Shape:", text_feature.shape)
+
 ```
 
 ### To perform sound event localization and plot the diagram
@@ -110,6 +105,8 @@ Please refer to [sed_inference_and_plot.py](./test/sed_inference_and_plot.py).
 You should be able to see [such plot](./test/sed_output/sed_heatmap_23s-33s.png) by running the below codes:
 
 ```python
+from pathlib import Path
+
 import librosa
 import numpy as np
 import scipy
@@ -118,14 +115,19 @@ import torch
 import openflam
 from openflam.module.plot_utils import plot_sed_heatmap
 
+# Configuration
+OUTPUT_DIR = Path("sed_output")  # Directory to save output figures
+
+# Define target sound events
 TEXTS = [
     "breaking bones",
-    "mechanical beep",
-    "whoosh short",
+    "metallic creak",
+    "tennis ball",
     "troll scream",
-    "female speaker"
+    "female speaker",
 ]
 
+# Define negative class (sounds that shouldn't be in the audio)
 NEGATIVE_CLASS = [
     "female speaker"
 ]
@@ -171,8 +173,11 @@ similarity = {f"{TEXTS[i]}": act_map_filter[0][i] for i in range(len(TEXTS))}
 target_sr = 32000
 audio_plot = librosa.resample(audio, orig_sr=SR, target_sr=target_sr)
 
+# Create output directory if it doesn't exist
+OUTPUT_DIR.mkdir(exist_ok=True)
+
 # Generate and save visualization
-output_path = "sed_heatmap.png"
+output_path = OUTPUT_DIR / "sed_heatmap.png"
 plot_sed_heatmap(
     audio_plot,
     target_sr,
