@@ -1,6 +1,6 @@
 # OpenFLAM
 <p align="center">
-  <img src="./assets/FLAM_SLOGAN.png" alt="Framewise Language-Audio Modeling" width="75%"/>
+  <img src="https://raw.githubusercontent.com/adobe-research/openflam/main/assets/FLAM_SLOGAN.png" alt="Framewise Language-Audio Modeling" width="75%"/>
 </p>
 <p align="center">
   <a href="https://arxiv.org/abs/2505.05335"><img src="https://img.shields.io/badge/arXiv-2505.05335-brightgreen.svg?style=flat-square"/></a>
@@ -15,10 +15,11 @@ FLAM is a cutting-edge language–audio model that supports both zero-shot sound
 This code accompanies the following ICML 2025 publication:
 ```
 @inproceedings{flam2025,
-  title = {FLAM: Frame-Wise Language-Audio Modeling},
-  author = {Yusong Wu and Christos Tsirigotis and Ke Chen and Cheng-Zhi Anna Huang and Aaron Courville and Oriol Nieto and Prem Seetharaman and Justin Salamon},
-  booktitle={International Conference on Machine Learning, ICML},
-  year = {2025}
+    title={{FLAM}: Frame-Wise Language-Audio Modeling},
+    author={Yusong Wu and Christos Tsirigotis and Ke Chen and Cheng-Zhi Anna Huang and Aaron Courville and Oriol Nieto and Prem Seetharaman and Justin Salamon},
+    booktitle={Forty-second International Conference on Machine Learning (ICML)},
+    year={2025},
+    url={https://openreview.net/forum?id=7fQohcFrxG}
 }
 ```
 
@@ -26,7 +27,7 @@ This code accompanies the following ICML 2025 publication:
 
 FLAM is based on contrastive language-audio pretraining, known as CLAP, and improve its capability by supporting the frame-wise event localization via learnable text and audio biases and scales.  
 <p align="center">
-  <img src="./assets/FLAM_ARCH.png" alt="FLAM Architecture" width="100%"/>
+  <img src="https://raw.githubusercontent.com/adobe-research/openflam/main/assets/FLAM_ARCH.png" alt="FLAM Architecture" width="100%"/>
 </p>
 
 ## Quick Start 
@@ -206,7 +207,7 @@ OpenFLAM is trained **on all publicly available datasets**, including:
 
 We report a comparison of the OpenFLAM performance to the original paper report (the global retrieval metrics --ie, A2T and T2A-- are R@1 / R@5):
 <p align="center">
-  <img src="./assets/Exp.png" alt="FLAM Exp" width="100%"/>
+  <img src="https://raw.githubusercontent.com/adobe-research/openflam/main/assets/Exp.png" alt="FLAM Exp" width="100%"/>
 </p>
 
 
@@ -216,10 +217,11 @@ If you use OpenFLAM, please cite our main work:
 
 ```
 @inproceedings{flam2025,
-  title = {FLAM: Frame-Wise Language-Audio Modeling},
-  author = {Yusong Wu and Christos Tsirigotis and Ke Chen and Cheng-Zhi Anna Huang and Aaron Courville and Oriol Nieto and Prem Seetharaman and Justin Salamon},
-  booktitle={International Conference on Machine Learning, ICML},
-  year = {2025}
+    title={{FLAM}: Frame-Wise Language-Audio Modeling},
+    author={Yusong Wu and Christos Tsirigotis and Ke Chen and Cheng-Zhi Anna Huang and Aaron Courville and Oriol Nieto and Prem Seetharaman and Justin Salamon},
+    booktitle={Forty-second International Conference on Machine Learning (ICML)},
+    year={2025},
+    url={https://openreview.net/forum?id=7fQohcFrxG}
 }
 ```
 
