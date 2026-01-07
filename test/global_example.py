@@ -1,6 +1,6 @@
 """
-The embedding inference example of OpenFLAM
---------------------------------------------------------
+Global Example: Audio-Text Similarity with OpenFLAM
+---------------------------------------------------
 Paper: https://arxiv.org/abs/2505.05335
 Code Maintainers: Ke Chen, Yusong Wu, Oriol Nieto, Prem Seetharaman
 Support: Adobe Research
@@ -47,6 +47,3 @@ global_similarities = (text_feature @ audio_global_feature.T).squeeze(1)
 print("\nGlobal Cosine Similarities:")
 for text, score in zip(text_samples, global_similarities):
     print(f"{text}: {score.item():.4f}")
-
-print("Audio Global Embedding Shape:", audio_global_feature.shape)
-print("Text Embedding Shape:", text_feature.shape)

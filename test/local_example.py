@@ -1,5 +1,5 @@
 """
-Sound Event Detection (SED) Inference Example of OpenFLAM
+Local Example: Sound Event Detection (SED) with OpenFLAM
 --------------------------------------------------------
 Paper: https://arxiv.org/abs/2505.05335
 Code Maintainers: Ke Chen, Yusong Wu, Oriol Nieto, Prem Seetharaman
