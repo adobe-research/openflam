@@ -40,13 +40,13 @@ pip install openflam
 
 Two examples are provided:
 
-1. [global_example.py](./test/global_example.py): to obtain audio and text embeddings and do sound event localization.
+1. [global_example.py](./test/global_example.py): to obtain audio and text embeddings and do clip-wise similarity.
 2. [local_example.py](./test/local_example.py) to do sound event localization and plot the results.
 
 For the API documentation, please refer to [hook.py](./src/openflam/hook.py).
 
 
-### To obtain global audio and text embeddings
+### Global Example: To obtain clip-wise similarity between audio and text embeddings
 
 Please refer to [global_example.py](./test/global_example.py):
 
@@ -92,13 +92,9 @@ global_similarities = (text_feature @ audio_global_feature.T).squeeze(1)
 print("\nGlobal Cosine Similarities:")
 for text, score in zip(text_samples, global_similarities):
     print(f"{text}: {score.item():.4f}")
-
-print("Audio Global Embedding Shape:", audio_global_feature.shape)
-print("Text Embedding Shape:", text_feature.shape)
-
 ```
 
-### To perform sound event localization and plot the diagram
+### Local Example: To perform sound event localization and plot the diagram
 
 Please refer to [local_example.py](./test/local_example.py). 
 
