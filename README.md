@@ -4,7 +4,7 @@
 </p>
 <p align="center">
   <a href="https://arxiv.org/abs/2505.05335"><img src="https://img.shields.io/badge/arXiv-2505.05335-brightgreen.svg?logo=arxiv&logoColor=red"/></a>
-  <a href="https://pypi.org/project/openflam"><img src="https://badge.fury.io/py/openflam.svg?icon=si%3Apython"/></a>
+  <a href="https://pypi.org/project/openflam"><img src="https://badge.fury.io/py/openflam.svg?icon=si%3Apython&icon_color=%232add51"/></a>
   <a href="./LICENSE"><img alt="Static Badge" src="https://img.shields.io/badge/License-Adobe_Research-yellow?logo=bookstack&logoColor=yellow"></a>
   <a href="https://flam-model.github.io/"><img alt="Static Badge" src="https://img.shields.io/badge/FLAM%20Website-8A2BE2?logo=wolfram"></a>
 </p>
